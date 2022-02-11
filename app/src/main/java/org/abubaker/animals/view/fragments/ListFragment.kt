@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import org.abubaker.animals.R
 import org.abubaker.animals.databinding.FragmentListBinding
 
@@ -23,6 +25,10 @@ class ListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        mBinding.buttonDetails.setOnClickListener {
+            val action = ListFragmentDirections.actionDetails()
+            Navigation.findNavController(it).navigate(action)
+        }
 
     }
 

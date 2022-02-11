@@ -1,7 +1,13 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt' // Required by ROOM
+
+    // Required by dataBinding
+    id 'kotlin-kapt'
+
+    // Apply the plugin to navigate with auto generated classes and pass the arguments.
+    // Reference: https://developer.android.com/guide/navigation/navigation-pass-data#Safe-args
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {

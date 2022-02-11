@@ -3,29 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/animal_nav"
-    app:startDestination="@id/listFragment"
+    app:startDestination="@id/list_fragment"
     >
 
     <fragment
-        android:id="@+id/listFragment"
+        android:id="@+id/list_fragment"
         android:name="org.abubaker.animals.view.fragments.ListFragment"
         android:label="fragment_list"
         tools:layout="@layout/fragment_list"
         >
         <action
             android:id="@+id/actionDetails"
-            app:destination="@id/detailFragment"
+            app:destination="@id/detail_fragment"
             />
     </fragment>
     <fragment
-        android:id="@+id/detailFragment"
+        android:id="@+id/detail_fragment"
         android:name="org.abubaker.animals.view.fragments.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail"
         >
         <action
             android:id="@+id/actionList"
-            app:destination="@id/listFragment"
+            app:destination="@id/list_fragment"
             />
     </fragment>
 </navigation>
