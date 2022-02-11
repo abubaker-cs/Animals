@@ -2,6 +2,7 @@ package org.abubaker.animals
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
 import org.abubaker.animals.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -12,7 +13,8 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        // binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         setContentView(binding.root)
 
 
