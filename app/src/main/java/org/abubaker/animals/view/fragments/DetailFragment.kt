@@ -25,7 +25,7 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mBinding.buttonList.setOnClickListener {
-            val action = ListFragmentDirections.actionDetails()
+            val action = DetailFragmentDirections.actionList()
             Navigation.findNavController(it).navigate(action)
         }
 
