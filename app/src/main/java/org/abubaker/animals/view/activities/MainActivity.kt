@@ -1,8 +1,9 @@
-package org.abubaker.animals
+package org.abubaker.animals.view.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import org.abubaker.animals.R
 import org.abubaker.animals.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
