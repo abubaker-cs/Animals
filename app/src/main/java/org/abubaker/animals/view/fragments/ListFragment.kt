@@ -6,15 +6,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import org.abubaker.animals.R
+import org.abubaker.animals.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
+
+    private lateinit var mBinding: FragmentListBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list, container, false)
+        mBinding = FragmentListBinding.inflate(inflater, container, false)
+        return mBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
     }
 
 }
