@@ -23,13 +23,13 @@ class ListFragment : Fragment() {
         return mBinding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        mBinding.buttonDetails.setOnClickListener {
-            val action = ListFragmentDirections.actionDetails()
-            Navigation.findNavController(it).navigate(action)
-        }
-
-    }
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        mBinding.buttonDetails.setOnClickListener {
+//            val action = ListFragmentDirections.actionDetails()
+//            Navigation.findNavController(it).navigate(action)
+//        }
+//
+//    }
 
 }

@@ -22,13 +22,13 @@ class DetailFragment : Fragment() {
         return mBinding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        mBinding.buttonList.setOnClickListener {
-            val action = DetailFragmentDirections.actionList()
-            Navigation.findNavController(it).navigate(action)
-        }
-
-    }
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        mBinding.buttonList.setOnClickListener {
+//            val action = DetailFragmentDirections.actionList()
+//            Navigation.findNavController(it).navigate(action)
+//        }
+//
+//    }
 
 }
