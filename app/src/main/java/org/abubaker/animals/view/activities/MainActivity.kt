@@ -21,15 +21,11 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
 
-        // binding = ActivityMainBinding.inflate(layoutInflater)
-        // binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         setContentView(binding.root)
 
-        // navController = Navigation.findNavController(this, R.id.nav_host_fragment)
-        // NavigationUI.setupActionBarWithNavController(this, navController)
-        navController = findNavController( R.id.nav_host_fragment)
-        setupActionBarWithNavController(navController)
+        navController = Navigation.findNavController( this, R.id.nav_host_fragment)
+        NavigationUI.setupActionBarWithNavController(this, navController )
 
     }
 
