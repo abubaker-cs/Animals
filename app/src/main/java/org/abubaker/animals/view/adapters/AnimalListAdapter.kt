@@ -1,5 +1,6 @@
 package org.abubaker.animals.view.adapters
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,13 @@ class AnimalListAdapter(
     private val animalList: ArrayList<Animal>
 ) :
     RecyclerView.Adapter<AnimalListAdapter.AnimalViewHolder>() {
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateAnimalList(newAnimalList: List<Animal>){
+        animalList.clear()
+        animalList.addAll(newAnimalList)
+        notifyDataSetChanged()
+    }
 
     /**
      * A ViewHolder describes an item view and metadata about its place within the RecyclerView.
@@ -64,6 +72,7 @@ class AnimalListAdapter(
     override fun onBindViewHolder(holder: AnimalViewHolder, position: Int) {
 
         // We are selecting the CURRENT item in the LIST total records
+        // val item = animalList[position]
         val item = animalList[position].name
         holder.animalName.text = item
     }
