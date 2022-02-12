@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="An error occured while loading the data"
+                android:text="@string/list_loading_error_message"
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/animalList"
                 app:layout_constraintEnd_toEndOf="parent"
