@@ -22,15 +22,22 @@ class ListFragment : Fragment() {
     private lateinit var mAnimalListAdapter: AnimalListAdapter
 
     private val animalListDataObserver = Observer<List<Animal>> { list ->
-
+        list?.let {
+            mBinding.animalList.visibility = View.VISIBLE
+            mAnimalListAdapter.updateAnimalList(it)
+        }
     }
 
     private val loadingLiveDataObserver = Observer<Boolean> { isLoading ->
-
+        mBinding.loadingView.visibility = if (isLoading) View.VISIBLE else View.GONE
+        if (isLoading) {
+            mBinding.listError.visibility = View.GONE
+            mBinding.animalList.visibility = View.GONE
+        }
     }
 
     private val errorLiveDataObserver = Observer<Boolean> { isError ->
-
+        mBinding.listError.visibility = if (isError) View.VISIBLE else View.GONE
     }
 
     override fun onCreateView(
@@ -58,12 +65,17 @@ class ListFragment : Fragment() {
         viewModel.refresh()
 
         mBinding.animalList.apply {
-//             layoutManager = GridLayoutManager(context, 2)
-//             adapter = listAdapter
 
             mBinding.animalList.layoutManager = GridLayoutManager(requireActivity(), 2)
-            // mAnimalListAdapter = AnimalListAdapter(this@ListFragment)
             mBinding.animalList.adapter = mAnimalListAdapter
+        }
+
+        mBinding.refreshLayout.setOnRefreshListener {
+            mBinding.animalList.visibility = View.GONE
+            mBinding.listError.visibility = View.GONE
+            mBinding.loadingView.visibility = View.VISIBLE
+            viewModel.hardRefresh()
+            mBinding.refreshLayout.isRefreshing = false
         }
 
     }

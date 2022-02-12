@@ -19,6 +19,10 @@ class ListViewModel(application: Application) : AndroidViewModel(application) {
         getAnimals()
     }
 
+    fun hardRefresh() {
+        loading.value = true
+    }
+
     private fun getAnimals() {
         val a1 = Animal("alligator")
         val a2 = Animal("bee")
